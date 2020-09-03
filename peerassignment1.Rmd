@@ -1,0 +1,24 @@
+
+## September 2nd, 2020
+```{r, echo = FALSE}
+library(leaflet)
+caticon <- makeIcon(
+        iconUrl = "./cat.png",
+        iconWidth = 40, iconHeight = 40,
+  iconAnchorX = 0, iconAnchorY = 0
+)
+
+catcafeLatLong <- data.frame(
+        lat = c(38.229000, 38.244160, 38.223260),
+        lng = c(-85.701714, -85.547070, -85.693370)
+        )
+
+catcafeLatLong %>%
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(icon = caticon, 
+                   popup = c("Purrfect Cat Cafe",
+                             "Alley Cat Cafe & Catering",
+                             "Lucky Cat Cafe & Lounge"))
+```
+Cat Cafes in Louisville, KY
