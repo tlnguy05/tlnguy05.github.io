@@ -1,0 +1,17 @@
+---
+title: "Developing Data Product - Peer Assignment Week 3"
+author: "tlnguy05"
+date: "September 4th, 2020"
+output: ioslides_presentation
+---
+
+## 3D plot with plotly
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+set.seed(09-04-2020)
+z = seq(0, 4*pi, length.out = 250)
+x = 2*cos(z) + rnorm(250)
+y = 2*sin(z) + rnorm(250)
+plot_ly(x = x, y = y, z = z, type = "scatter3d", mode = "markers", color = x)
+
+```
